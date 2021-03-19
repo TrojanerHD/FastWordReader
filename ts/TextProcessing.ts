@@ -13,7 +13,8 @@ class TextProcessing {
     let textSplitRaw: string[] = (document.querySelector(
       'textarea#input'
     ) as HTMLTextAreaElement).value.split(/\s/g);
-    if (textSplitRaw.length === 0) this.#textDiv.innerHTML = '[NO TEXT ENTERED]';
+    if (textSplitRaw.length === 0)
+      this.#textDiv.innerHTML = '[NO TEXT ENTERED]';
     textSplitRaw = textSplitRaw.filter((value: string) => value !== '');
     this.#textSplit = [];
     for (let i: number = 0; i < textSplitRaw.length; i++) {
@@ -27,17 +28,21 @@ class TextProcessing {
   }
 
   private loop(): void {
+    if (this.#count === this.#textSplit.length) {
+      this.#textDiv.innerHTML = '[BLANK]';
+      return;
+    }
     this.#textDiv.innerHTML = this.#textSplit[this.#count];
     this.#count++;
     this.nextWord();
   }
 
   nextWord(): void {
-    if (this.#count < this.#textSplit.length && !this._pause)
+    if (this.#count <= this.#textSplit.length && !this._pause)
       setTimeout(
         this.loop.bind(this),
         (((1000 * 60 * this.#textSplit[this.#count - 1].length) / 3) *
-          (this.#textSplit[this.#count - 1].match(/[\.\?!]/g) ? 5 : 1) *
+          (this.#textSplit[this.#count - 1].match(/[\.\?!]/g) ? 2 : 1) *
           (this.count(this.#textSplit[this.#count - 1]) * 10 + 1)) /
           this._lpm
       );
