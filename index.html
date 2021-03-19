@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF8" />
+    <title>Fast Word Reader</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/TextProcessing.js"></script>
+    <script src="js/index.js"></script>
+  </head>
+  <body>
+    <div id="outer-text">
+      <div id="text">[BLANK]</div>
+    </div>
+    <textarea name="input" id="input" rows="30" cols="100"></textarea>
+    <input type="button" value="Start" id="start" />
+    <input type="button" value="Pause" id="pause"/>
+    <input type="range" min="100" max="500" id="speed" step="50" />
+    <div id="speed-desc"></div>
+  </body>
+</html>

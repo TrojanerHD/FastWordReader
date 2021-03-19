@@ -1,0 +1,25 @@
+body,
+textarea,
+input[type='button'] {
+  background-color: #131313;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+textarea,
+input[type='button'] {
+  border: 1px solid white;
+}
+
+div#outer-text {
+  width: 99vw;
+}
+
+div#text {
+  text-align: center;
+  font-size: 60pt;
+}
+
+div#speed-desc {
+  display: inline;
+}

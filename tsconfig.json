@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "rootDir": "./ts",
+      "outDir": "./js",
+      "module": "System",
+      "target": "ES2020"
+    },
+    "files": ["ts/index.ts", "ts/TextProcessing.ts"]
+  }
